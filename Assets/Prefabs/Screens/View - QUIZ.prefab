@@ -8220,13 +8220,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _items:
-  - text: 1
+  - text: In free fall, a body moves at a constant velocity.
     answer: 0
-  - text: 2
+  - text: Vacuum is the best medium to study free fall.
+    answer: 1
+  - text: A body always falls vertically downward.
+    answer: 1
+  - text: All objects on Earth fall with the same acceleration.
     answer: 0
-  - text: 3
+  - text: "The acceleration of free fall on Earth is approximately 9.8 m/s\xB2."
+    answer: 1
+  - text: The acceleration of free fall depends on the mass of the falling body.
     answer: 0
-  - text: 4
+  - text: The force of friction affects free fall.
+    answer: 0
+  - text: The velocity of a falling body increases in proportion to the time of fall.
+    answer: 0
+  - text: In free fall, an open parachute causes an increase in drag force.
+    answer: 1
+  - text: The fall of a body on the moon occurs at a speed that is less than on Earth.
+    answer: 1
+  - text: During free fall, the vertical velocity of an object increases.
+    answer: 1
+  - text: The acceleration of free fall is always the same on different planets.
+    answer: 0
+  - text: A body falling on Earth falls at a speed that increases by 9.8 m/s every
+      second.
+    answer: 1
+  - text: The density of a falling body affects its free-fall velocity.
+    answer: 0
+  - text: The acceleration of free fall depends on the height of the fall.
+    answer: 0
+  - text: The size and shape of a falling body affect its free-fall acceleration.
+    answer: 0
+  - text: The time for a body to fall increases with increasing height.
+    answer: 0
+  - text: The free fall acceleration of a falling object is equal to the gravitational
+      acceleration.
+    answer: 1
+  - text: The trajectory of free fall is always a straight line.
+    answer: 1
+  - text: Energy is conserved during free fall.
     answer: 1
   text: {fileID: 1902968862}
+  indexText: {fileID: 612421227}
   index: 0
