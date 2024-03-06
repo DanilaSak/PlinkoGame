@@ -21,6 +21,8 @@ namespace Game1
         };
 
         public Node[,] NodeGrid;
+        private float horizontalOffset;
+        private float verticalOffset;
 
         public void Start()
         {
@@ -29,8 +31,8 @@ namespace Game1
 
         public void SpawnNodes()
         {
-            var horizontalOffset = grid.GetLength(1) / 2 * offset.x;
-            var verticalOffset = grid.GetLength(0) / 2 * offset.y;
+            horizontalOffset = grid.GetLength(1) / 2 * offset.x;
+            verticalOffset = grid.GetLength(0) / 2 * offset.y;
             NodeGrid = new Node[grid.GetLength(0), grid.GetLength(1)];
             for (int y = 0; y < grid.GetLength(0); y++)
             {
@@ -93,19 +95,6 @@ namespace Game1
         [ContextMenu("test")]
         public void CheckStash()
         {
-            int[,] NodeGrid = new int[,]
-            {
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-            };
-            Debug.Log(NodeGrid.GetLength(0)); //y
-            Debug.Log(NodeGrid.GetLength(1)); //x
-
-            int t = 1;
             //====== вправо 
 
             // for (int i = 0; i < NodeGrid.GetLength(1); i++)
@@ -143,61 +132,97 @@ namespace Game1
             //    
             //     }
             // }
-            
+
             //==== Влево
             for (int i = NodeGrid.GetLength(1) - 1; i >= 0; i--)
             {
                 var x = i;
+                var match = new Match();
                 for (int j = 0; j < NodeGrid.GetLength(0); j++)
                 {
                     var y = j;
-                    if (x <0)
+                    if (x < 0)
                     {
                         break;
                     }
-            
-                    Debug.Log($"{x} - {y}");
-                    NodeGrid[y, x] = t++;
+
+
+                    match.Add(NodeGrid[y, x]);
                     x -= 1;
                 }
+
+                match.Use();
             }
-          
+
             for (int j = 1; j < NodeGrid.GetLength(0); j++)
             {
                 var y = j;
-            
+                var match = new Match();
                 for (int i = 0; i < NodeGrid.GetLength(1); i++)
                 {
-                    var x =NodeGrid.GetLength(1)- i-1;
+                    var x = NodeGrid.GetLength(1) - i - 1;
                     if (y >= NodeGrid.GetLength(0))
                     {
                         break;
                     }
-            
+
                     Debug.Log($"{x} - {y}");
-                    NodeGrid[y, x] = t++;
+                    match.Add(NodeGrid[y, x]);
                     y += 1;
-               
                 }
+
+                match.Use();
             }
 
-            //=====
-            var text = "";
-            for (int y = 0; y < NodeGrid.GetLength(0); y++)
+            for (var y = 0; y < NodeGrid.GetLength(0); y++)
             {
-                for (int x = 0; x < NodeGrid.GetLength(1); x++)
+                for (var x = 0; x < NodeGrid.GetLength(1); x++)
                 {
-                    text += $" |{NodeGrid[y, x],2}| ";
+                    if (NodeGrid[y, x] == null) continue;
+                    if (!NodeGrid[y, x].isSetToDestroy) continue;
+                    var t = NodeGrid[y, x];
+                    NodeGrid[y, x] = null;
+                    Destroy(t.gameObject);
                 }
-
-                text += "\n";
             }
-
-            Debug.Log(text);
         }
 
         public void Gravity()
         {
+            
+            for (var y = 0; y < NodeGrid.GetLength(0); y++)
+            {
+                for (var x = 0; x < NodeGrid.GetLength(1); x++)
+                {
+                    if (NodeGrid[y, x] == null) continue;
+                    if (!CheckPosition(new Vector2Int(x - 1, y - 1))) continue; // Swap
+                    //NodeGrid[y, x].transform.
+                    NodeGrid[y, x].transform.position = new Vector3(x * offset.x - horizontalOffset,
+                        y * offset.y - verticalOffset, 0);
+                    (NodeGrid[y, x], NodeGrid[y + 1, x - 1]) = (NodeGrid[y + 1, x - 1], NodeGrid[y, x]);
+                }
+            }
+
+            var t="";
+            for (int y = 0; y < NodeGrid.GetLength(0); y++)
+            {
+                for (int x = 0; x < NodeGrid.GetLength(1); x++)
+                {
+                    t += $" |{(NodeGrid[y, x] == null ? 0 : 1)}| ";
+                }
+
+                t += "\n";
+            }
+            Debug.Log(t);
+        }
+
+        public bool CheckPosition(Vector2Int position)
+        {
+            if (position.x >= NodeGrid.GetLength(1)) return false;
+            if (position.y >= NodeGrid.GetLength(0)) return false;
+            if (position.x < 0) return false;
+            if (position.y < 0) return false;
+            return NodeGrid[position.y, position.x] == null;
         }
 
         public void Swap(Node s1, Node s2)

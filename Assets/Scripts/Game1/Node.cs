@@ -9,7 +9,7 @@ namespace Game1
     {
         [SerializeField] private SpriteRenderer _renderer;
         [SerializeField] private GameObject selectLabel;
-        [SerializeField] private Ball _ball;
+        [SerializeField] public Ball _ball;
         [SerializeField] private Sprite Gold;
         [SerializeField] private Sprite Purple;
         [SerializeField] private Sprite Red;
@@ -21,6 +21,7 @@ namespace Game1
         [SerializeField] private Sprite Pink;
         [SerializeField] private Sprite Orange;
 
+        public bool isSetToDestroy;
         public event Action<Node> Click; 
         
         public void Randomize()
