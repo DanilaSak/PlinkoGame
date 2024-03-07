@@ -70,8 +70,8 @@ public class UIController : SingletonMonoBehaviour<UIController>
 
     public static void OpenGameOverView(int score)
     {
-        instance.gameOverScoreText.text = $"{score}";
-        instance.gameOverView.SetTrigger("pulse");
+        // instance.gameOverScoreText.text = $"{score}";
+        // instance.gameOverView.SetTrigger("pulse");
     }
 
     public static void ShowGameScreen()
@@ -111,7 +111,7 @@ public class UIController : SingletonMonoBehaviour<UIController>
 
     public static void UpdateHighScore(int score)
     {
-        instance.highscoreText.text = $"High Score: {score}";
+        // instance.highscoreText.text = $"High Score: {score}";
     }
 
     public static void UpdateGoalScore(int goalScore)

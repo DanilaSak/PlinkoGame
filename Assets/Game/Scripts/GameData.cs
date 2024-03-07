@@ -39,7 +39,7 @@ public class AudioClipInfo {
 public class GameData : SingletonScriptableObject<GameData> {
     
     [SerializeField]
-    List<GemData> gems = new List<GemData>();
+   public List<GemData> gems = new List<GemData>();
     [SerializeField]
     List<SpecialGemData> specialGems = new List<SpecialGemData>();
     [SerializeField]
