@@ -1,5 +1,63 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8417907906236925522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6c631d933489d4ca7328a2a5983e10, type: 3}
+  m_Name: Win
+  m_EditorClassIdentifier: 
+  DatabaseName: General
+  SoundName: Win
+  IgnoreListenerPause: 1
+  Volume:
+    MinValue: -9.8
+    MaxValue: -7.1
+  Pitch:
+    MinValue: -1.3
+    MaxValue: 8.7
+  SpatialBlend: 0
+  Loop: 0
+  Mode: 0
+  ResetSequenceAfterInactiveTime: 0
+  SequenceResetTime: 5
+  Sounds:
+  - AudioClip: {fileID: 8300000, guid: 681fcdda33dffd043bc222e7d3351c5f, type: 3}
+    Weight: 1
+--- !u!114 &-4290107202893887034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6c631d933489d4ca7328a2a5983e10, type: 3}
+  m_Name: Hit
+  m_EditorClassIdentifier: 
+  DatabaseName: General
+  SoundName: Hit
+  IgnoreListenerPause: 1
+  Volume:
+    MinValue: 0
+    MaxValue: 0
+  Pitch:
+    MinValue: -6.8
+    MaxValue: 5.8
+  SpatialBlend: 0
+  Loop: 0
+  Mode: 0
+  ResetSequenceAfterInactiveTime: 0
+  SequenceResetTime: 5
+  Sounds:
+  - AudioClip: {fileID: 8300000, guid: 601f4f2a861349e43bc71710c5c8297a, type: 3}
+    Weight: 1
 --- !u!114 &-3640897645734099952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27,6 +85,35 @@ MonoBehaviour:
   ResetSequenceAfterInactiveTime: 0
   SequenceResetTime: 5
   Sounds: []
+--- !u!114 &-72460754125649248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6c631d933489d4ca7328a2a5983e10, type: 3}
+  m_Name: Spawn
+  m_EditorClassIdentifier: 
+  DatabaseName: General
+  SoundName: Spawn
+  IgnoreListenerPause: 1
+  Volume:
+    MinValue: -14.7
+    MaxValue: -7.4
+  Pitch:
+    MinValue: -5.8
+    MaxValue: 7.7
+  SpatialBlend: 0
+  Loop: 0
+  Mode: 0
+  ResetSequenceAfterInactiveTime: 0
+  SequenceResetTime: 5
+  Sounds:
+  - AudioClip: {fileID: 8300000, guid: 0ca2a60dc07a68f4ab3e1a81b93120ab, type: 3}
+    Weight: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44,10 +131,20 @@ MonoBehaviour:
   SoundNames:
   - No Sound
   - Button Click
+  - Hit
+  - Lose
   - No Sound
+  - Spawn
+  - Trigger
+  - Win
   Database:
   - {fileID: -3640897645734099952}
   - {fileID: 2669472709021710917}
+  - {fileID: -4290107202893887034}
+  - {fileID: 7644826145688088889}
+  - {fileID: -72460754125649248}
+  - {fileID: 3431461767073728674}
+  - {fileID: -8417907906236925522}
 --- !u!114 &2669472709021710917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,11 +161,11 @@ MonoBehaviour:
   SoundName: Button Click
   IgnoreListenerPause: 1
   Volume:
-    MinValue: -4.6
+    MinValue: 0
     MaxValue: 0
   Pitch:
-    MinValue: -6
-    MaxValue: 13.7
+    MinValue: 2.6
+    MaxValue: 18
   SpatialBlend: 1
   Loop: 0
   Mode: 0
@@ -76,4 +173,62 @@ MonoBehaviour:
   SequenceResetTime: 5
   Sounds:
   - AudioClip: {fileID: 8300000, guid: 711649738fae5e444aa31a2564aece06, type: 3}
+    Weight: 1
+--- !u!114 &3431461767073728674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6c631d933489d4ca7328a2a5983e10, type: 3}
+  m_Name: Trigger
+  m_EditorClassIdentifier: 
+  DatabaseName: General
+  SoundName: Trigger
+  IgnoreListenerPause: 1
+  Volume:
+    MinValue: -10.7
+    MaxValue: -7
+  Pitch:
+    MinValue: -0.4
+    MaxValue: 5.3
+  SpatialBlend: 0
+  Loop: 0
+  Mode: 0
+  ResetSequenceAfterInactiveTime: 0
+  SequenceResetTime: 5
+  Sounds:
+  - AudioClip: {fileID: 8300000, guid: a55165a76aa3cf84d9df693c0a8ac13e, type: 3}
+    Weight: 1
+--- !u!114 &7644826145688088889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6c631d933489d4ca7328a2a5983e10, type: 3}
+  m_Name: Lose
+  m_EditorClassIdentifier: 
+  DatabaseName: General
+  SoundName: Lose
+  IgnoreListenerPause: 1
+  Volume:
+    MinValue: -17
+    MaxValue: -14.9
+  Pitch:
+    MinValue: 0
+    MaxValue: 0
+  SpatialBlend: 0
+  Loop: 0
+  Mode: 0
+  ResetSequenceAfterInactiveTime: 0
+  SequenceResetTime: 5
+  Sounds:
+  - AudioClip: {fileID: 8300000, guid: 73f2051c3913664418e8f1fa95cf586b, type: 3}
     Weight: 1
