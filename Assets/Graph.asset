@@ -842,13 +842,6 @@ MonoBehaviour:
       m_outputNodeId: bf9fc4c2-97e0-404a-a444-dc8f04c08d0a
       m_outputSocketId: 3d42d7b4-9f5a-438b-8ebc-2b114c376ba7
     - m_inputConnectionPoint: {x: -2, y: 4}
-      m_outputConnectionPoint: {x: 222, y: 4}
-      m_id: 52812d32-07ec-45dd-b90f-537db61b09b0
-      m_inputNodeId: 51e15efb-c7e2-4b22-8e61-da2a24712236
-      m_inputSocketId: f7c6f4b5-c714-48ed-9a9b-ccff72103fd2
-      m_outputNodeId: f92af70d-5bf6-4362-8b04-1c12079a1904
-      m_outputSocketId: 68c5b6b1-4afc-4ae5-bc56-412efd6d9928
-    - m_inputConnectionPoint: {x: -2, y: 4}
       m_outputConnectionPoint: {x: 202, y: 4}
       m_id: 3d63f0c9-908e-45bd-a634-b8b6208cb469
       m_inputNodeId: 51e15efb-c7e2-4b22-8e61-da2a24712236
@@ -1521,14 +1514,13 @@ MonoBehaviour:
   - {fileID: -4779462587883917296}
   - {fileID: -4865665053023164245}
   - {fileID: 1151698470797423848}
-  - {fileID: 1926918393177234570}
   - {fileID: 8218188913576491107}
   - {fileID: -6165795752473564028}
   m_isSubGraph: 0
   m_version: 1
   m_description: 
   m_id: 7b07d289-d263-495f-acad-433a8d47e7ae
-  m_lastModified: 133542459408462490
+  m_lastModified: 133543035345329480
 --- !u!114 &786721189876932480
 MonoBehaviour:
   m_ObjectHideFlags: 1
