@@ -7,23 +7,17 @@ namespace DefaultNamespace.Game2
     public class WalletDisplay : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI text;
-
-        [SerializeField] private BallWallet _wallet;
-
-
-
-        private void OnChange()
+        public static WalletDisplay i;
+        private void Awake()
         {
-            if (!text || !_wallet) return;
-            text.text = $"{_wallet.Count}";
+            i = this;
         }
 
-        public void SetWallet(BallWallet gameWallet)
+        public void Change(int count)
         {
-            _wallet = gameWallet;
-            _wallet.Change += OnChange;
-
-            OnChange();
+            if (!text ) return;
+            text.text = $"{count}";
         }
+
     }
 }

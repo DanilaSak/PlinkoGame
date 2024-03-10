@@ -824,8 +824,21 @@ PlayerSettings:
   scriptingDefineSymbols:
     : FACEBOOK;PLAYFAB
     Android: UNITY_ADS
+    EmbeddedLinux: DOTWEEN
+    GameCoreScarlett: DOTWEEN
+    GameCoreXboxOne: DOTWEEN
+    LinuxHeadlessSimulation: DOTWEEN
+    Lumin: DOTWEEN
+    Nintendo Switch: DOTWEEN
+    PS4: DOTWEEN
+    PS5: DOTWEEN
+    Stadia: DOTWEEN
+    Standalone: DOTWEEN
+    WebGL: DOTWEEN
     Windows Store Apps: UNITY_ADS
+    XboxOne: DOTWEEN
     iPhone: UNITY_ADS
+    tvOS: DOTWEEN
   additionalCompilerArguments: {}
   platformArchitecture:
     iPhone: 1
